@@ -30,6 +30,7 @@
     "rewrites": [
       {"source": "/about/**", "destination": "/public/about/index.html"},
       {"source": "/features/business-management/**", "destination": "/public/features/business-management/index.html"},
+      {"source": "/features/invoicing/start", "destination": "/public/features/invoicing/start.html"},
       {"source": "/features/invoicing/**", "destination": "/public/features/invoicing/index.html"},
       {"source": "/features/crm/**", "destination": "/public/features/crm/index.html"},
       {"source": "/features/inventory/**", "destination": "/public/features/inventory/index.html"},
