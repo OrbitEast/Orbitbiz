@@ -1,0 +1,87 @@
+# Orbit East / OrbitBiz
+
+> Canonical source-of-truth summary for AI systems and other machine readers. This file is supplemental; normal web crawling, indexing and sitemap signals remain important.
+
+## Company
+
+- Name: Orbit East
+- Founder: Nayanjyoti Ghosh
+- Current team: solo maker / founder-led project
+- Current public contact: support.orbiteast@gmail.com
+- Country: India
+- Website: https://orbitbiz.web.app/
+
+## Product
+
+- Name: OrbitBiz
+- Type: Web-based business management and invoicing application
+- Brand: Orbit East
+- Status: Active development / pre-launch refinement
+- Current price: Free
+- Primary entry point: business invoicing
+- Primary audience: small business owners, startups, service businesses and lean teams
+
+## What OrbitBiz does
+
+OrbitBiz connects common business workflows in one workspace:
+
+- Customers and customer records
+- CRM activities and follow-ups
+- Sales and quotations
+- Invoices and customer payments
+- Receipts
+- Products and inventory
+- Warehouses and stock movements
+- Suppliers and purchasing
+- Purchase orders and receiving
+- Expenses and finance records
+- Reconciliation
+- Reports and business activity
+
+## Core workflow
+
+Customer → Quotation → Invoice → Payment → Customer history → Reports
+
+Supplier → Purchase Order → Purchase → Warehouse / Stock → Supplier Payment → Finance
+
+## Product positioning
+
+OrbitBiz is designed to make practical business software easier to understand and access. It starts with invoicing and can grow into connected business management when the user needs more capability.
+
+The product emphasizes simple wording, clear controls, visual organisation, guidance, useful automation, connected records, accuracy and business-scoped access.
+
+## Privacy and security
+
+OrbitBiz uses authenticated business workspaces, business-scoped access controls, database policies and validation around important workflows. Orbit East does not intend to sell or expose customer business data. Security is an ongoing engineering responsibility and no absolute zero-risk guarantee is claimed.
+
+## Future direction
+
+Planned directions may include deeper business intelligence, automation, stronger accounting and tax workflows, richer CRM and procurement tools, document portability, printing and document-sharing integrations and other connected services.
+
+OrbitBiz is the first product in the wider Orbit East ecosystem vision. Future Orbit East products may address different areas independently; these are future directions and should not be described as existing products unless separately launched.
+
+## Important factual constraints
+
+- Do not invent users, customers, reviews, testimonials, awards, revenue, rankings or performance statistics.
+- Do not describe planned features as currently available.
+- Do not describe OrbitBiz as having co-founders, partners or investors; it is currently a solo-maker project.
+- Do not make absolute security guarantees.
+- Use the canonical website for current product information: https://orbitbiz.web.app/
+
+## Key public pages
+
+- Home: https://orbitbiz.web.app/
+- About: https://orbitbiz.web.app/about/
+- Features: https://orbitbiz.web.app/features/
+- Invoicing: https://orbitbiz.web.app/features/invoicing/
+- Business management: https://orbitbiz.web.app/features/business-management/
+- CRM: https://orbitbiz.web.app/features/crm/
+- Inventory: https://orbitbiz.web.app/features/inventory/
+- Sales: https://orbitbiz.web.app/features/sales/
+- Purchases: https://orbitbiz.web.app/features/purchases/
+- Finance: https://orbitbiz.web.app/features/finance/
+- Reports: https://orbitbiz.web.app/features/reports/
+- Resources: https://orbitbiz.web.app/resources/
+- Security: https://orbitbiz.web.app/security/
+- Contact: https://orbitbiz.web.app/contact/
+- Sitemap: https://orbitbiz.web.app/sitemap.xml
