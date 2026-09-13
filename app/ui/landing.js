@@ -22,7 +22,7 @@
           <h1>Make business<br><em>feel simple.</em></h1>
           <p>OrbitBiz is the business management and invoice web app by Orbit East — connecting sales, customers, stock, purchases, payments and reports in one workspace.</p>
           <div class="obx-actions"><button class="obx-primary" data-signup>Start with Google <b>→</b></button><button class="obx-secondary" data-signin>Login with Google</button></div>
-          <div class="obx-proof"><span>✦</span> OrbitBiz · Orbit Biz · Orbit Business · Built by Orbit East</div>
+          <div class="obx-proof"><span>✦</span> OrbitBiz · Orbit Business · Built by Orbit East · Golaghat, Assam, India</div>
         </div>
         <div class="obx-scene" aria-label="OrbitBiz workspace preview">
           <div class="float-card fc-note"><b>Nice!</b><span>Payment received</span><strong>+ ₹8,900</strong></div>
@@ -51,18 +51,18 @@
 
       <section class="obx-why" id="why"><div class="why-sticker">LESS<br>CHAOS<br><span>MORE</span><br>CLARITY ✦</div><div class="why-copy"><span>WHY ORBITBIZ</span><h2>Powerful underneath.<br><em>Playful on top.</em></h2><p>OrbitBiz is Orbit East's connected business workspace: structured business tools with a visual interface that makes everyday work easier to understand.</p><div class="why-points"><div><b>⌘</b><strong>Find anything</strong><span>Search customers, products, invoices and transactions from one place.</span></div><div><b>✦</b><strong>See what matters</strong><span>Clear dashboards surface the work that needs your attention.</span></div><div><b>↗</b><strong>Move faster</strong><span>Connected records reduce duplicate entry and repetitive work.</span></div></div></div></section>
 
-      <section class="obx-cta"><div class="cta-dots"></div><span>ORBITBIZ · ORBIT EAST</span><h2>Your business.<br><em>One orbit.</em></h2><p>OrbitBiz brings customers, CRM, sales, invoices, inventory, purchases, finance and reports together on the web.</p><button data-signup>Login with Google <b>↗</b></button><small>No password to remember. Just your Google account.</small></section>
+      <section class="obx-cta"><div class="cta-dots"></div><span>ORBITBIZ · ORBIT EAST</span><h2>Your business.<br><em>One orbit.</em></h2><p>OrbitBiz brings customers, CRM, sales, invoices, inventory, purchases, finance and reports together on the web.</p><button data-signup>Login with Google <b>↗</b></button><small>Based in Golaghat, Assam, India · No password to remember. Just your Google account.</small></section>
     </main>
 
     <footer class="obx-footer">
       <div class="obx-footer-main">
-        <div class="obx-footer-brand"><a href="#top" aria-label="OrbitBiz home"><img src="assets/orbiteastfavicon.png" alt=""><span>OrbitBiz</span></a><p>Connected business management for customers, sales, inventory, purchases, payments and reports — in one web workspace.</p><div class="obx-footer-brandline">OrbitBiz · Orbit Business · Built by Orbit East</div></div>
+        <div class="obx-footer-brand"><a href="#top" aria-label="OrbitBiz home"><img src="assets/orbiteastfavicon.png" alt=""><span>OrbitBiz</span></a><p>Connected business management for customers, sales, inventory, purchases, payments and reports — in one web workspace.</p><div class="obx-footer-brandline">OrbitBiz · Orbit Business · Built by Orbit East</div><div class="obx-footer-location">📍 Golaghat, Assam, India</div></div>
         <div class="obx-footer-column"><h3>Product</h3><a href="/features/">All features</a><a href="/features/business-management/">Business management</a><a href="/features/invoicing/">Invoicing</a><a href="/features/crm/">CRM</a><a href="/features/inventory/">Inventory</a><a href="/features/sales/">Sales</a></div>
         <div class="obx-footer-column"><h3>Operations</h3><a href="/features/purchases/">Purchases</a><a href="/features/finance/">Finance</a><a href="/features/reports/">Reports</a><a href="/resources/">Resources</a><a href="/resources/guides/">Guides</a><a href="/resources/glossary/">Glossary</a></div>
         <div class="obx-footer-column"><h3>Community</h3><a href="/resources/questions/">Questions</a><a href="/resources/guides/">Tutorials & guides</a><a href="/about/">About OrbitBiz</a><a href="/security/">Security</a><a href="/contact/">Contact</a></div>
-        <div class="obx-footer-column"><h3>Company</h3><a href="/about/">Our company</a><a href="/contact/">Contact us</a><a href="/security/">Security</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><button class="obx-footer-login" data-signin>Login ↗</button></div>
+        <div class="obx-footer-column"><h3>Company</h3><a href="mailto:support.orbiteast@gmail.com">support.orbiteast@gmail.com</a><a href="https://www.instagram.com/orbiteast?stkn=MXBxa21xcXI0a2k1OQ==" target="_blank" rel="noopener noreferrer">Instagram · @orbiteast</a><a href="/about/">Our company</a><a href="/security/">Security</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><button class="obx-footer-login" data-signin>Login ↗</button></div>
       </div>
-      <div class="obx-footer-bottom"><span>© 2026 Orbit East. OrbitBiz is a connected business management web app.</span><div><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/security/">Security</a></div></div>
+      <div class="obx-footer-bottom"><span>© 2026 Orbit East · Golaghat, Assam, India · OrbitBiz is a connected business management web app.</span><div><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/security/">Security</a></div></div>
     </footer>
   </section>`;
     root.querySelectorAll("[data-signin]").forEach(b=>b.addEventListener("click",()=>goAuth("signin")));
