@@ -1,10 +1,16 @@
 {
-  "name": "Orbit Biz",
-  "short_name": "Orbit Biz",
-  "description": "Business operating software by Orbit East for invoicing, inventory and everyday business operations.",
+  "name": "OrbitBiz — Business Management & Invoice Web App",
+  "short_name": "OrbitBiz",
+  "description": "OrbitBiz by Orbit East is a connected business management and invoice web app for sales, customers, CRM, inventory, purchases, payments, finance and reports.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#111111",
-  "icons": []
+  "icons": [
+    {
+      "src": "/assets/orbiteastfavicon.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
 }
