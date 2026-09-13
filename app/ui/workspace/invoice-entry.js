@@ -7,7 +7,7 @@
   function hasInvoiceIntent() {
     try {
       const params = new URLSearchParams(window.location.search);
-      return params.get("workspace") === "invoices" && params.get("action") === "new";
+      return (params.get("workspace") === "invoices" && params.get("action") === "new") || localStorage.getItem("orbitbiz.invoiceIntent") === "new";
     } catch (_) {
       return false;
     }
@@ -15,6 +15,7 @@
 
   function clearIntent() {
     try {
+      localStorage.removeItem("orbitbiz.invoiceIntent");
       const url = new URL(window.location.href);
       url.searchParams.delete("action");
       history.replaceState(history.state, "", url.pathname + (url.searchParams.toString() ? `?${url.searchParams}` : "") + url.hash);
