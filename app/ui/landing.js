@@ -20,9 +20,9 @@
         <div class="obx-hero-copy">
           <div class="obx-pill"><span></span> A smarter way to run business</div>
           <h1>Make business<br><em>feel simple.</em></h1>
-          <p>Sales, customers, stock, purchases and money — all moving together in one colourful workspace.</p>
+          <p>OrbitBiz is the business management and invoice web app by Orbit East — connecting sales, customers, stock, purchases, payments and reports in one workspace.</p>
           <div class="obx-actions"><button class="obx-primary" data-signup>Start with Google <b>→</b></button><button class="obx-secondary" data-signin>Login with Google</button></div>
-          <div class="obx-proof"><span>✦</span> One workspace · One connected flow · Built by Orbit East</div>
+          <div class="obx-proof"><span>✦</span> OrbitBiz · Orbit Biz · Orbit Business · Built by Orbit East</div>
         </div>
         <div class="obx-scene" aria-label="OrbitBiz workspace preview">
           <div class="float-card fc-note"><b>Nice!</b><span>Payment received</span><strong>+ ₹8,900</strong></div>
@@ -42,19 +42,18 @@
         </div>
       </section>
 
-      <section class="obx-marquee"><div>CRM <i>✦</i> SALES <i>✦</i> INVENTORY <i>✦</i> FINANCE <i>✦</i> REPORTS <i>✦</i> CUSTOMERS <i>✦</i> PAYMENTS <i>✦</i> </div></section>
+      <section class="obx-marquee"><div>CRM <i>✦</i> SALES <i>✦</i> INVOICES <i>✦</i> INVENTORY <i>✦</i> FINANCE <i>✦</i> REPORTS <i>✦</i> CUSTOMERS <i>✦</i> PAYMENTS <i>✦</i> </div></section>
 
       <section class="obx-section apps" id="apps"><div class="section-intro"><span>THE TOOLKIT</span><h2>Everything your<br><em>business needs.</em></h2><p>Pick up the tools you need. They already know how to work together.</p></div>
-        <div class="app-grid"><article class="app-card ac-pink"><i>◎</i><h3>CRM</h3><p>Keep every customer and opportunity in context.</p><b>Explore →</b></article><article class="app-card ac-blue"><i>↗</i><h3>Sales</h3><p>Move from quotation to payment without the busywork.</p><b>Explore →</b></article><article class="app-card ac-yellow"><i>◈</i><h3>Inventory</h3><p>Know what you have, what moved and what needs attention.</p><b>Explore →</b></article><article class="app-card ac-purple"><i>₹</i><h3>Finance</h3><p>See expenses, payments and business money clearly.</p><b>Explore →</b></article><article class="app-card ac-green"><i>⌁</i><h3>Purchases</h3><p>Keep vendors, buying and incoming stock organised.</p><b>Explore →</b></article><article class="app-card ac-orange"><i>▥</i><h3>Reports</h3><p>Turn everyday activity into decisions you can see.</p><b>Explore →</b></article></div>
-      </section>
+        <div class="app-grid"><article class="app-card ac-pink"><i>◎</i><h3>CRM</h3><p>Keep every customer and opportunity in context.</p><b>Explore →</b></article><article class="app-card ac-blue"><i>↗</i><h3>Sales & Invoicing</h3><p>Create invoices, move sales forward and connect payments without the busywork.</p><b>Explore →</b></article><article class="app-card ac-yellow"><i>◈</i><h3>Inventory</h3><p>Know what you have, what moved and what needs attention.</p><b>Explore →</b></article><article class="app-card ac-purple"><i>₹</i><h3>Finance</h3><p>See expenses, payments and business money clearly.</p><b>Explore →</b></article><article class="app-card ac-green"><i>⌁</i><h3>Purchases</h3><p>Keep vendors, buying and incoming stock organised.</p><b>Explore →</b></article><article class="app-card ac-orange"><i>▥</i><h3>Reports</h3><p>Turn everyday activity into decisions you can see.</p><b>Explore →</b></article></div></section>
 
       <section class="obx-flow" id="workflow"><div class="flow-copy"><span>THE MAGIC IS THE CONNECTION</span><h2>Enter it once.<br><em>Watch it travel.</em></h2><p>A customer becomes a quotation. A quotation becomes a sale. A sale moves stock, creates an invoice and ends with a payment — without starting over.</p><button data-signup>Build your workspace →</button></div><div class="flow-board"><div class="flow-line"></div><div class="flow-item fi-1"><small>01</small><b>Customer</b><span>◎ Relationship</span></div><div class="flow-item fi-2"><small>02</small><b>Quotation</b><span>↗ Opportunity</span></div><div class="flow-item fi-3"><small>03</small><b>Invoice</b><span>▤ Transaction</span></div><div class="flow-item fi-4"><small>04</small><b>Payment</b><span>✓ Complete</span></div></div></section>
 
-      <section class="obx-why" id="why"><div class="why-sticker">LESS<br>CHAOS<br><span>MORE</span><br>CLARITY ✦</div><div class="why-copy"><span>WHY ORBITBIZ</span><h2>Powerful underneath.<br><em>Playful on top.</em></h2><p>Serious business tools do not have to feel cold. OrbitBiz combines structure with a visual workspace that makes everyday work easier to understand — and a little more fun to use.</p><div class="why-points"><div><b>⌘</b><strong>Find anything</strong><span>Search customers, products, invoices and transactions from one place.</span></div><div><b>✦</b><strong>See what matters</strong><span>Clear dashboards surface the work that needs your attention.</span></div><div><b>↗</b><strong>Move faster</strong><span>Connected records reduce duplicate entry and repetitive work.</span></div></div></div></section>
+      <section class="obx-why" id="why"><div class="why-sticker">LESS<br>CHAOS<br><span>MORE</span><br>CLARITY ✦</div><div class="why-copy"><span>WHY ORBITBIZ</span><h2>Powerful underneath.<br><em>Playful on top.</em></h2><p>OrbitBiz is Orbit East's connected business workspace: structured business tools with a visual interface that makes everyday work easier to understand.</p><div class="why-points"><div><b>⌘</b><strong>Find anything</strong><span>Search customers, products, invoices and transactions from one place.</span></div><div><b>✦</b><strong>See what matters</strong><span>Clear dashboards surface the work that needs your attention.</span></div><div><b>↗</b><strong>Move faster</strong><span>Connected records reduce duplicate entry and repetitive work.</span></div></div></div></section>
 
-      <section class="obx-cta"><div class="cta-dots"></div><span>ORBITBIZ · PRESENTED BY ORBIT EAST</span><h2>Your business.<br><em>One orbit.</em></h2><p>We're building the workspace that brings it all together.</p><button data-signup>Login with Google <b>↗</b></button><small>No password to remember. Just your Google account.</small></section>
+      <section class="obx-cta"><div class="cta-dots"></div><span>ORBITBIZ · ORBIT EAST</span><h2>Your business.<br><em>One orbit.</em></h2><p>OrbitBiz brings customers, CRM, sales, invoices, inventory, purchases, finance and reports together on the web.</p><button data-signup>Login with Google <b>↗</b></button><small>No password to remember. Just your Google account.</small></section>
     </main>
-    <footer><div><img src="assets/orbiteastfavicon.png" alt=""><b>OrbitBiz</b></div><span>Presented by Orbit East · © 2026</span></footer>
+    <footer><div><img src="assets/orbiteastfavicon.png" alt=""><b>OrbitBiz</b></div><span>OrbitBiz · Orbit Business · Orbit East · © 2026</span></footer>
   </section>`;
     root.querySelectorAll("[data-signin]").forEach(b=>b.addEventListener("click",()=>goAuth("signin")));
     root.querySelectorAll("[data-signup]").forEach(b=>b.addEventListener("click",()=>goAuth("signup")));
