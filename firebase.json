@@ -39,6 +39,7 @@
       {"source": "/features/finance/**", "destination": "/public/features/finance/index.html"},
       {"source": "/features/reports/**", "destination": "/public/features/reports/index.html"},
       {"source": "/features", "destination": "/public/features/index.html"},
+      {"source": "/resources/blog/**", "destination": "/public/resources/blog/index.html"},
       {"source": "/resources/guides/**", "destination": "/public/resources/guides/index.html"},
       {"source": "/resources/glossary/**", "destination": "/public/resources/glossary/index.html"},
       {"source": "/resources/questions/**", "destination": "/public/resources/questions/index.html"},
