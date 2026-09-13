@@ -15,35 +15,29 @@
       {
         "source": "/sitemap.xml",
         "headers": [
-          {
-            "key": "Content-Type",
-            "value": "application/xml; charset=UTF-8"
-          },
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=300"
-          }
+          {"key": "Content-Type", "value": "application/xml; charset=UTF-8"},
+          {"key": "Cache-Control", "value": "public, max-age=300"}
         ]
       },
       {
         "source": "/robots.txt",
         "headers": [
-          {
-            "key": "Content-Type",
-            "value": "text/plain; charset=UTF-8"
-          },
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=300"
-          }
+          {"key": "Content-Type", "value": "text/plain; charset=UTF-8"},
+          {"key": "Cache-Control", "value": "public, max-age=300"}
         ]
       }
     ],
     "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
+      {"source": "/about/**", "destination": "/public/about/index.html"},
+      {"source": "/features", "destination": "/public/features/index.html"},
+      {"source": "/features/**", "destination": "/public/features/index.html"},
+      {"source": "/resources", "destination": "/public/resources/index.html"},
+      {"source": "/resources/**", "destination": "/public/resources/index.html"},
+      {"source": "/security/**", "destination": "/public/security/index.html"},
+      {"source": "/contact/**", "destination": "/public/contact/index.html"},
+      {"source": "/privacy/**", "destination": "/public/privacy/index.html"},
+      {"source": "/terms/**", "destination": "/public/terms/index.html"},
+      {"source": "**", "destination": "/index.html"}
     ]
   }
 }
