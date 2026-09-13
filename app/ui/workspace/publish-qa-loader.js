@@ -18,4 +18,10 @@
       document.head.appendChild(script);
     })
     .catch(error => console.error("OrbitBiz: publish QA bundle failed to load", error));
+
+  // Keep public feature entry points connected to the same authenticated workspace.
+  const entry = document.createElement("script");
+  entry.src = "app/core/navigation-entry.js?v=20260913";
+  entry.defer = false;
+  document.head.appendChild(entry);
 })();
