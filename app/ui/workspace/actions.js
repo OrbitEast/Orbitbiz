@@ -13,103 +13,26 @@
     return result.data || [];
   };
   w.safe = async (state, table, columns="*") => { try { return await w.query(state, table, columns); } catch (error) { console.warn(`OrbitBiz: ${table} unavailable`, error); return []; } };
-
-  w.toast = message => {
-    let node = document.querySelector(".ob-toast");
-    if (!node) { node = document.createElement("div"); node.className = "ob-toast"; document.body.appendChild(node); }
-    node.textContent = message;
-    node.classList.add("show");
-    clearTimeout(w._toastTimer);
-    w._toastTimer = setTimeout(() => node.classList.remove("show"), 2200);
-  };
-
+  w.toast = message => { let node=document.querySelector(".ob-toast"); if(!node){node=document.createElement("div");node.className="ob-toast";document.body.appendChild(node)} node.textContent=message;node.classList.add("show");clearTimeout(w._toastTimer);w._toastTimer=setTimeout(()=>node.classList.remove("show"),2200); };
   w.escape = value => String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[char]));
-  w.field = (label, name, type="text", required=false, value="", placeholder="") => `<label class="ob-field"><span>${label}</span><input name="${name}" type="${type}" value="${w.escape(value)}" placeholder="${w.escape(placeholder)}" ${required ? "required" : ""}></label>`;
-  w.textarea = (label, name, value="", placeholder="") => `<label class="ob-field"><span>${label}</span><textarea name="${name}" rows="3" placeholder="${w.escape(placeholder)}">${w.escape(value)}</textarea></label>`;
-
-  w.modal = (title, body) => {
-    document.querySelector(".ob-modal")?.remove();
-    const node = document.createElement("div");
-    node.className = "ob-modal";
-    node.innerHTML = `<div class="ob-modal-backdrop" data-close></div><div class="ob-modal-card"><div class="ob-modal-head"><div><span class="ob-eyebrow">ORBITBIZ</span><h3>${title}</h3></div><button data-close aria-label="Close">×</button></div>${body}</div>`;
-    document.body.appendChild(node);
-    node.querySelectorAll("[data-close]").forEach(button => button.addEventListener("click", () => node.remove()));
-    return node;
-  };
-
+  w.field = (label,name,type="text",required=false,value="",placeholder="") => `<label class="ob-field"><span>${label}</span><input name="${name}" type="${type}" value="${w.escape(value)}" placeholder="${w.escape(placeholder)}" ${required?"required":""}></label>`;
+  w.textarea = (label,name,value="",placeholder="") => `<label class="ob-field"><span>${label}</span><textarea name="${name}" rows="3" placeholder="${w.escape(placeholder)}">${w.escape(value)}</textarea></label>`;
+  w.modal = (title,body) => { document.querySelector(".ob-modal")?.remove();const node=document.createElement("div");node.className="ob-modal";node.innerHTML=`<div class="ob-modal-backdrop" data-close></div><div class="ob-modal-card"><div class="ob-modal-head"><div><span class="ob-eyebrow">ORBITBIZ</span><h3>${title}</h3></div><button data-close aria-label="Close">×</button></div>${body}</div>`;document.body.appendChild(node);node.querySelectorAll("[data-close]").forEach(button=>button.addEventListener("click",()=>node.remove()));return node; };
   w.newCustomer = state => w.customerForm(state);
-
-  w.customerForm = (state, customer=null) => {
-    const editing = Boolean(customer?.id);
-    const node = w.modal(editing ? "Edit customer" : "Add customer", `<form class="ob-form" data-form="customer"><div class="ob-form-grid">${w.field("Name","name","text",true,customer?.name)}${w.field("Company","company_name","text",false,customer?.company_name)}${w.field("Phone","phone","tel",false,customer?.phone)}${w.field("Email","email","email",false,customer?.email)}${w.field("GSTIN","gstin","text",false,customer?.gstin)}${w.field("Credit limit","credit_limit","number",false,customer?.credit_limit)}${w.field("Opening balance","opening_balance","number",false,customer?.opening_balance)}</div>${w.textarea("Notes","notes",customer?.notes,"Optional notes about this customer")}<button class="ob-primary" type="submit">${editing ? "Save changes" : "Save customer"} ${w.icon("arrow")}</button></form>`);
-    node.querySelector("form")?.addEventListener("submit", event => w.saveCustomer(event, state, customer));
-    return node;
-  };
-
-  w.saveCustomer = async (event, state, existing=null) => {
-    event.preventDefault();
-    const form = event.currentTarget;
-    const raw = Object.fromEntries(new FormData(form).entries());
-    const data = {
-      name: String(raw.name || "").trim(),
-      company_name: String(raw.company_name || "").trim() || null,
-      phone: String(raw.phone || "").trim() || null,
-      email: String(raw.email || "").trim() || null,
-      gstin: String(raw.gstin || "").trim() || null,
-      credit_limit: raw.credit_limit === "" ? null : Number(raw.credit_limit),
-      opening_balance: raw.opening_balance === "" ? 0 : Number(raw.opening_balance),
-      notes: String(raw.notes || "").trim() || null
-    };
-    if (!data.name) { w.toast("Customer name is required"); return; }
-    if (!Number.isFinite(data.opening_balance) || (data.credit_limit !== null && !Number.isFinite(data.credit_limit))) { w.toast("Enter valid amounts"); return; }
-    try {
-      const client = w.db();
-      if (!client) throw new Error("Database is not available");
-      const result = existing?.id
-        ? await client.from("customers").update(data).eq("id", existing.id).eq("business_id", state.businessId)
-        : await client.from("customers").insert({...data, business_id: state.businessId});
-      if (result.error) throw result.error;
-      form.closest(".ob-modal")?.remove();
-      w.toast(existing?.id ? "Customer updated" : "Customer added");
-      await state.renderPage();
-    } catch (error) { console.error(error); w.toast(error.message || "Could not save customer"); }
-  };
-
-  w.editCustomer = async (state, id) => {
-    const rows = await w.safe(state, "customers");
-    const customer = rows.find(row => row.id === id);
-    if (!customer) { w.toast("Customer could not be found"); return; }
-    w.customerForm(state, customer);
-  };
-
-  w.newItem = state => {
-    const node = w.modal("Add item", `<form class="ob-form" data-form="item">${w.field("Item name","name","text",true)}${w.field("SKU","sku")}${w.field("Sale price","selling_price","number")}${w.field("Tax rate","tax_rate","number")}<button class="ob-primary" type="submit">Save item ${w.icon("arrow")}</button></form>`);
-    node.querySelector("form")?.addEventListener("submit", event => w.saveItem(event, state));
-  };
-  w.saveItem = async (event, state) => {
-    event.preventDefault();
-    const form = event.currentTarget;
-    const data = Object.fromEntries(new FormData(form).entries());
-    data.business_id = state.businessId;
-    data.selling_price = Number(data.selling_price || 0);
-    data.tax_rate = Number(data.tax_rate || 0);
-    try {
-      const result = await w.db().from("items").insert(data);
-      if (result.error) throw result.error;
-      form.closest(".ob-modal")?.remove();
-      w.toast("Item added");
-      await state.renderPage();
-    } catch (error) { w.toast(error.message || "Could not save item"); }
-  };
-
+  w.customerForm = (state,customer=null) => { const editing=Boolean(customer?.id);const node=w.modal(editing?"Edit customer":"Add customer",`<form class="ob-form" data-form="customer"><div class="ob-form-grid">${w.field("Name","name","text",true,customer?.name)}${w.field("Company","company_name","text",false,customer?.company_name)}${w.field("Phone","phone","tel",false,customer?.phone)}${w.field("Email","email","email",false,customer?.email)}${w.field("GSTIN","gstin","text",false,customer?.gstin)}${w.field("Credit limit","credit_limit","number",false,customer?.credit_limit)}${w.field("Opening balance","opening_balance","number",false,customer?.opening_balance)}</div>${w.textarea("Notes","notes",customer?.notes,"Optional notes about this customer")}<button class="ob-primary" type="submit">${editing?"Save changes":"Save customer"} ${w.icon("arrow")}</button></form>`);node.querySelector("form")?.addEventListener("submit",event=>w.saveCustomer(event,state,customer));return node; };
+  w.saveCustomer = async(event,state,existing=null) => { event.preventDefault();const form=event.currentTarget,raw=Object.fromEntries(new FormData(form).entries()),data={name:String(raw.name||"").trim(),company_name:String(raw.company_name||"").trim()||null,phone:String(raw.phone||"").trim()||null,email:String(raw.email||"").trim()||null,gstin:String(raw.gstin||"").trim()||null,credit_limit:raw.credit_limit===""?null:Number(raw.credit_limit),opening_balance:raw.opening_balance===""?0:Number(raw.opening_balance),notes:String(raw.notes||"").trim()||null};if(!data.name){w.toast("Customer name is required");return}if(!Number.isFinite(data.opening_balance)||(data.credit_limit!==null&&!Number.isFinite(data.credit_limit))){w.toast("Enter valid amounts");return}try{const client=w.db();if(!client)throw new Error("Database is not available");const result=existing?.id?await client.from("customers").update(data).eq("id",existing.id).eq("business_id",state.businessId):await client.from("customers").insert({...data,business_id:state.businessId});if(result.error)throw result.error;form.closest(".ob-modal")?.remove();w.toast(existing?.id?"Customer updated":"Customer added");await state.renderPage()}catch(error){console.error(error);w.toast(error.message||"Could not save customer")}};
+  w.editCustomer = async(state,id) => {const rows=await w.safe(state,"customers");const customer=rows.find(row=>row.id===id);if(!customer){w.toast("Customer could not be found");return}w.customerForm(state,customer)};
+  w.newItem = state => {const node=w.modal("Add item",`<form class="ob-form" data-form="item">${w.field("Item name","name","text",true)}${w.field("SKU","sku")}${w.field("Sale price","selling_price","number")}${w.field("Tax rate","tax_rate","number")}<button class="ob-primary" type="submit">Save item ${w.icon("arrow")}</button></form>`);node.querySelector("form")?.addEventListener("submit",event=>w.saveItem(event,state));};
+  w.saveItem = async(event,state) => {event.preventDefault();const form=event.currentTarget,data=Object.fromEntries(new FormData(form).entries());data.business_id=state.businessId;data.selling_price=Number(data.selling_price||0);data.tax_rate=Number(data.tax_rate||0);try{const result=await w.db().from("items").insert(data);if(result.error)throw result.error;form.closest(".ob-modal")?.remove();w.toast("Item added");await state.renderPage()}catch(error){w.toast(error.message||"Could not save item")}};
   w.quickAdd = state => {
-    const node = w.modal("Choose an action", `<div class="ob-choice-grid"><button data-action="new-customer"><i class="tone-pink">${w.icon("customers")}</i><b>Customer</b><small>Add a relationship</small></button><button data-action="quick-invoice"><i class="tone-yellow">${w.icon("invoices")}</i><b>Invoice</b><small>Create a sale</small></button><button data-action="new-item"><i class="tone-green">${w.icon("inventory")}</i><b>Item</b><small>Add to catalogue</small></button></div>`);
-    node.querySelectorAll("[data-action]").forEach(button => button.addEventListener("click", () => {
-      const action = button.dataset.action;
+    const node=w.modal("Choose an action",`<div class="ob-choice-grid"><button data-action="new-customer"><i class="tone-pink">${w.icon("customers")}</i><b>Customer</b><small>Add a relationship</small></button><button data-action="quick-invoice"><i class="tone-yellow">${w.icon("invoices")}</i><b>Invoice</b><small>Create a sale</small></button><button data-action="new-item"><i class="tone-green">${w.icon("inventory")}</i><b>Item</b><small>Add to catalogue</small></button></div>`);
+    node.querySelectorAll("[data-action]").forEach(button=>button.addEventListener("click",event=>{
+      event.stopPropagation();
+      const action=button.dataset.action;
       node.remove();
-      if (action === "new-customer") w.newCustomer(state);
-      if (action === "new-item") w.newItem(state);
-      if (action === "quick-invoice") state.navigate("invoices");
+      if(action==="new-customer")w.newCustomer(state);
+      else if(action==="new-item")w.newItem(state);
+      else if(action==="quick-invoice")w.invoiceCreator?.(state,"");
     }));
   };
 })();
