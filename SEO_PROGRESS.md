@@ -1,84 +1,126 @@
-# Orbit Biz — SEO Progress
+# OrbitBiz — SEO Progress
 
-Last updated: 2026-09-10
+Last updated: 2026-09-13
 
 ## Current status
 
-### Technical SEO — COMPLETE
+### Technical SEO — strong foundation
 - [x] Google Search Console ownership verification completed.
-- [x] Google verification HTML file is present in the repository and should be kept while verification is needed.
 - [x] Google verification meta tag added to `index.html`.
-- [x] SEO title improved to target Orbit Biz + business management software.
-- [x] Meta description added and aligned with the actual product.
-- [x] `robots` / `googlebot` indexing directives added.
-- [x] Canonical URL added for `https://orbitbiz.web.app/`.
-- [x] Open Graph metadata added for social sharing previews.
-- [x] Twitter card metadata added.
-- [x] `SoftwareApplication` structured data added with Orbit East as publisher.
-- [x] `robots.txt` created and points crawlers to the sitemap.
-- [x] `sitemap.xml` created with the real public homepage URL.
+- [x] Crawl/index directives added for public pages.
+- [x] Canonical URLs added across public SEO pages.
+- [x] Open Graph metadata added for public pages and homepage.
+- [x] Twitter metadata added for the homepage.
+- [x] `WebSite`, `Organization` and `SoftwareApplication` structured data added to the homepage.
+- [x] Organization data identifies Orbit East and founder Nayanjyoti Ghosh without inventing team members.
+- [x] Public feature pages created for business management, invoicing, CRM, inventory, sales, purchases, finance and reports.
+- [x] Public resource pages created for guides, glossary and business questions.
+- [x] About, Contact, Security, Privacy and Terms pages are crawlable.
+- [x] `robots.txt` allows crawling and points to the sitemap.
+- [x] `sitemap.xml` contains the current public SEO pages.
 - [x] Web manifest added.
-- [x] GitHub → Firebase automatic deployment is working.
-- [x] Google Search Console currently reports the homepage as **“URL is on Google”**, meaning the homepage is already indexed.
+- [x] Machine-readable `llms.txt` added as a supplemental source-of-truth for AI systems and other readers.
+- [x] GitHub → Firebase deployment is configured.
 
-## Important note about the sitemap
+## Search strategy
 
-The sitemap currently contains only the homepage. This is intentional: Orbit Biz is currently a JavaScript single-page application, and we should not submit fake/duplicate URLs such as `/invoice` or `/inventory` until those become genuine, crawlable public SEO pages.
+The goal is not to stuff pages with repeated keywords. OrbitBiz should build search relevance through:
 
-## SEO work still remaining
+1. Strong brand/entity signals for **OrbitBiz** and **Orbit East**.
+2. Clear product identity: business management and invoicing software.
+3. Page-specific intent around invoicing, CRM, inventory, sales, purchases, finance and reports.
+4. Useful business education that can answer real search questions.
+5. Consistent internal linking between product pages, resources and company pages.
+6. Accurate structured data that matches visible page content.
+7. Genuine authority and discovery over time rather than artificial backlinks or fake social proof.
 
-### Priority 1 — Public SEO pages
-- [ ] Build genuine crawlable pages for major product capabilities, e.g. invoice, inventory, expenses, payments and business management.
-- [ ] Give each public page its own title, description, H1, useful content and canonical URL.
-- [ ] Add those real URLs to `sitemap.xml` after they exist.
-- [ ] Add internal links between related public pages.
+## Current target topic clusters
 
-### Priority 2 — Useful search content
-Create genuinely useful resources rather than keyword-stuffed pages, for example:
-- [ ] How to manage inventory for a small business
-- [ ] Invoice vs receipt: what is the difference?
-- [ ] How to track business expenses
-- [ ] Small-business billing/invoicing guide for India
-- [ ] Inventory management basics for small businesses
+### Brand
+- OrbitBiz
+- Orbit East
+- OrbitBiz business software
+- OrbitBiz invoicing
+- Orbit East India
 
-### Priority 3 — Search performance
-- [ ] Monitor Search Console impressions, clicks, CTR and average position.
-- [ ] Improve titles/descriptions based on actual queries and CTR.
-- [ ] Check indexing coverage and crawl issues.
-- [ ] Check Core Web Vitals / mobile performance.
-- [ ] Fix broken links, missing metadata and other crawl issues discovered by Search Console.
+### Invoicing
+- online invoicing software
+- business invoice software
+- invoice management software
+- invoice generator software
+- small business invoicing
+- invoicing software for startups
 
-### Priority 4 — Authority / discovery
-- [ ] Create genuine brand profiles where appropriate (GitHub, LinkedIn, Product Hunt, relevant startup/business directories, etc.).
-- [ ] Earn relevant backlinks through useful product/content—not spam or paid link schemes.
-- [ ] Keep Orbit Biz branding and descriptions consistent across public profiles.
+### Business management
+- business management software
+- small business management software
+- business operations software
+- connected business management
 
-## Manual Google Search Console actions
-
-Already indexed:
-- Homepage status: **URL is on Google**.
-
-Still recommended:
-- [ ] In Search Console → Sitemaps, submit `sitemap.xml` if not already submitted.
-- [ ] Do not repeatedly request indexing if the URL already says **“URL is on Google.”**
-
-## SEO target direction
-
-Initial target terms should focus on relevant, achievable long-tail searches rather than trying to rank immediately for extremely broad terms:
-- free business management software India
-- small business billing software India
+### Inventory
 - inventory management software for small business
-- business invoice software India
-- khata and inventory software
-- GST invoice software for small business
-- free invoice generator India
+- stock management software
+- warehouse inventory management
+- inventory tracking for small business
 
-These are targets for content planning, not guarantees of ranking. Do not stuff keywords into pages.
+### Finance and operations
+- business expense tracking
+- payment tracking software
+- purchase management software
+- supplier management software
+- business reports software
 
-## Product/SEO constraint
+These are content-planning topics, not ranking guarantees. Pages should only target terms that accurately match the page content.
 
-Orbit Biz is primarily a web app. The biggest next SEO improvement is making useful public product/resource content crawlable without requiring Google to execute the entire authenticated application. Authenticated workspace screens should remain focused on the actual app experience, while public SEO pages should explain the product and provide useful information.
+## AI / machine understanding
 
-## Next chat starting point
+OrbitBiz now has a clearer machine-readable identity across:
+- homepage Organization schema
+- SoftwareApplication schema
+- canonical URLs
+- sitemap
+- crawlable public pages
+- consistent product/company names
+- founder information where relevant
+- `llms.txt` factual source-of-truth
 
-**Start with Priority 1: create the first genuine public SEO/product page (recommended: Invoice/Billing), then update navigation, metadata, internal links and sitemap as part of the same implementation.**
+Google's current guidance still emphasizes normal Search fundamentals, useful non-commodity content and accurate structured data for AI-powered Search. `llms.txt` is supplemental and is not a Google ranking requirement.
+
+## Next SEO priorities
+
+### Priority 1 — Content depth
+Build individual, genuinely useful articles around real business questions rather than producing large numbers of thin pages.
+
+Examples:
+- How to create a business invoice
+- Invoice vs receipt: what is the difference?
+- How to track business expenses
+- How to manage inventory for a small business
+- What is a purchase order?
+- How customer records and CRM work together
+- How to reconcile business financial records
+- Small-business invoicing and billing basics in India
+
+### Priority 2 — Search performance
+- Monitor Search Console impressions, clicks, CTR and average position.
+- Review actual queries that generate impressions.
+- Improve titles and descriptions based on real search behaviour.
+- Check indexing coverage and crawl issues.
+- Check Core Web Vitals and mobile performance.
+- Fix broken links and metadata issues.
+
+### Priority 3 — Authority / discovery
+- Maintain consistent official brand information on genuine public profiles.
+- Earn relevant backlinks through useful product and educational content.
+- Avoid spammy link schemes, fake reviews, fake users and fabricated authority signals.
+
+### Priority 4 — Product-led SEO
+When a public workflow genuinely exists, create a dedicated crawlable page for it with a clear search intent, useful explanation, canonical URL, internal links and appropriate structured data.
+
+## Google Search Console
+
+The homepage was previously reported as **“URL is on Google.”** After substantial public-page changes, allow Google to recrawl naturally and use URL Inspection / sitemap submission where appropriate. Search rankings and rich-result appearance are not guaranteed by structured data alone.
+
+## Product / SEO constraint
+
+OrbitBiz is primarily a web application. Authenticated workspace screens should remain focused on the product experience. Public SEO pages should provide real, useful, crawlable information without requiring search engines to enter the private application.
