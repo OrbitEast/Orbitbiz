@@ -2,53 +2,31 @@
   "hosting": {
     "site": "orbitbiz",
     "public": ".",
-    "ignore": [
-      "firebase.json",
-      ".firebaserc",
-      "**/.*",
-      "**/node_modules/**",
-      "**/*.md",
-      "supabase-*.sql"
-    ],
+    "ignore": ["firebase.json",".firebaserc","**/.*","**/node_modules/**","**/*.md","supabase-*.sql"],
     "cleanUrls": true,
     "headers": [
-      {
-        "source": "/sitemap.xml",
-        "headers": [
-          {"key": "Content-Type", "value": "application/xml; charset=UTF-8"},
-          {"key": "Cache-Control", "value": "public, max-age=300"}
-        ]
-      },
-      {
-        "source": "/robots.txt",
-        "headers": [
-          {"key": "Content-Type", "value": "text/plain; charset=UTF-8"},
-          {"key": "Cache-Control", "value": "public, max-age=300"}
-        ]
-      }
+      {"source":"/sitemap.xml","headers":[{"key":"Content-Type","value":"application/xml; charset=UTF-8"},{"key":"Cache-Control","value":"public, max-age=300"}]},
+      {"source":"/robots.txt","headers":[{"key":"Content-Type","value":"text/plain; charset=UTF-8"},{"key":"Cache-Control","value":"public, max-age=300"}]}
     ],
     "rewrites": [
-      {"source": "/about/**", "destination": "/public/about/index.html"},
-      {"source": "/features/business-management/**", "destination": "/public/features/business-management/index.html"},
-      {"source": "/features/invoicing/start", "destination": "/public/features/invoicing/start.html"},
-      {"source": "/features/invoicing/**", "destination": "/public/features/invoicing/index.html"},
-      {"source": "/features/crm/**", "destination": "/public/features/crm/index.html"},
-      {"source": "/features/inventory/**", "destination": "/public/features/inventory/index.html"},
-      {"source": "/features/sales/**", "destination": "/public/features/sales/index.html"},
-      {"source": "/features/purchases/**", "destination": "/public/features/purchases/index.html"},
-      {"source": "/features/finance/**", "destination": "/public/features/finance/index.html"},
-      {"source": "/features/reports/**", "destination": "/public/features/reports/index.html"},
-      {"source": "/features", "destination": "/public/features/index.html"},
-      {"source": "/resources/blog/**", "destination": "/public/resources/blog/index.html"},
-      {"source": "/resources/guides/**", "destination": "/public/resources/guides/index.html"},
-      {"source": "/resources/glossary/**", "destination": "/public/resources/glossary/index.html"},
-      {"source": "/resources/questions/**", "destination": "/public/resources/questions/index.html"},
-      {"source": "/resources", "destination": "/public/resources/index.html"},
-      {"source": "/security/**", "destination": "/public/security/index.html"},
-      {"source": "/contact/**", "destination": "/public/contact/index.html"},
-      {"source": "/privacy/**", "destination": "/public/privacy/index.html"},
-      {"source": "/terms/**", "destination": "/public/terms/index.html"},
-      {"source": "**", "destination": "/index.html"}
+      {"source":"/about/**","destination":"/public/about/index.html"},
+      {"source":"/features/business-management/**","destination":"/public/features/business-management/index.html"},
+      {"source":"/features/invoicing/start","destination":"/public/features/invoicing/start.html"},
+      {"source":"/features/invoicing/**","destination":"/public/features/invoicing/index.html"},
+      {"source":"/features/crm/**","destination":"/public/features/crm/index.html"},
+      {"source":"/features/inventory/**","destination":"/public/features/inventory/index.html"},
+      {"source":"/features/sales/**","destination":"/public/features/sales/index.html"},
+      {"source":"/features/purchases/**","destination":"/public/features/purchases/index.html"},
+      {"source":"/features/finance/**","destination":"/public/features/finance/index.html"},
+      {"source":"/features/reports/**","destination":"/public/features/reports/index.html"},
+      {"source":"/features","destination":"/public/features/index.html"},
+      {"source":"/resources/blog/**","destination":"/public/resources/blog/index.html"},
+      {"source":"/resources","destination":"/public/resources/index.html"},
+      {"source":"/security/**","destination":"/public/security/index.html"},
+      {"source":"/contact/**","destination":"/public/contact/index.html"},
+      {"source":"/privacy/**","destination":"/public/privacy/index.html"},
+      {"source":"/terms/**","destination":"/public/terms/index.html"},
+      {"source":"**","destination":"/index.html"}
     ]
   }
 }
