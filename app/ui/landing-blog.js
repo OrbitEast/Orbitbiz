@@ -1,4 +1,4 @@
-/* OrbitBiz — homepage blog highlights */
+/* OrbitBiz — unified homepage blog integration */
 (()=>{
   "use strict";
   const addBlog=()=>{
@@ -6,38 +6,19 @@
     if(!apps || document.querySelector("#orbit-blog")) return !!apps;
     const section=document.createElement("section");
     section.id="orbit-blog";
-    section.className="obx-blog-section";
+    section.className="obx-blog-section obx-section";
     section.innerHTML=`
-      <div class="obx-blog-head">
-        <div>
-          <span class="obx-blog-label">ORBITBIZ BLOG · BUSINESS KNOWLEDGE</span>
-          <h2>Useful ideas for<br><em>running business better.</em></h2>
-          <p>Practical business tips, answers to common questions and clear guides for everyday operations. Explore the full collection in one place.</p>
-        </div>
-        <a class="obx-blog-all" href="/resources/blog/">Explore the Blog →</a>
-      </div>
-      <div class="obx-blog-grid">
-        <a class="obx-blog-card" href="/resources/guides/india/restaurant-increase-sales/">
-          <span class="obx-blog-type">Business Tips</span>
-          <h3>Practical ways to increase restaurant sales</h3>
-          <p>Simple ideas around repeat customers, offers, operations and everyday visibility.</p>
-          <b>Read article →</b>
-        </a>
-        <a class="obx-blog-card" href="/resources/questions/">
-          <span class="obx-blog-type">Questions</span>
-          <h3>Business questions, answered clearly</h3>
-          <p>Find straightforward answers to common questions about invoicing, inventory, CRM and business operations.</p>
-          <b>Browse questions →</b>
-        </a>
-        <a class="obx-blog-card" href="/resources/guides/">
-          <span class="obx-blog-type">Guides</span>
-          <h3>Learn the basics without the complexity</h3>
-          <p>Step-by-step guides for invoices, purchases, inventory, reports and better business workflows.</p>
-          <b>Browse guides →</b>
-        </a>
-      </div>
-      <div class="obx-blog-note">Business content is provided for general informational purposes and should be adapted to your business, market and applicable requirements.</div>`;
+      <div class="section-intro"><span>BUSINESS KNOWLEDGE · ONE PLACE</span><h2>Tips, guides and questions.<br><em>All in one blog.</em></h2><p>Practical business knowledge without a scattered resource maze. Browse business tips, how-to guides and common questions from one place.</p></div>
+      <div class="app-grid"><a class="app-card ac-pink" href="/resources/blog/"><i>✦</i><h3>Business Tips</h3><p>Industry-specific ideas for restaurants, retail, salons, electronics and more.</p><b>Browse tips →</b></a><a class="app-card ac-blue" href="/resources/blog/"><i>↗</i><h3>Guides & How-to</h3><p>Practical explanations for invoicing, CRM, inventory, purchasing, finance and reporting.</p><b>Read guides →</b></a><a class="app-card ac-yellow" href="/resources/blog/"><i>?</i><h3>Questions & Answers</h3><p>Clear answers to common business workflow questions, with anonymous discussion on blog posts.</p><b>Explore the blog →</b></a></div>`;
     apps.insertAdjacentElement("afterend",section);
+    const footer=document.querySelector("#orbit-biz-landing .obx-footer-main");
+    if(footer){
+      const columns=[...footer.querySelectorAll(".obx-footer-column")];
+      const operations=columns.find(c=>c.querySelector("h3")?.textContent.trim()==="Operations");
+      const community=columns.find(c=>c.querySelector("h3")?.textContent.trim()==="Community");
+      if(operations) operations.innerHTML='<h3>Explore</h3><a href="/features/">All features</a><a href="/features/business-management/">Business management</a><a href="/resources/blog/">Blog</a><a href="/about/">About</a>';
+      if(community) community.innerHTML='<h3>Support</h3><a href="/resources/blog/">Blog discussions</a><a href="/security/">Security</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a>';
+    }
     return true;
   };
   if(addBlog()) return;
