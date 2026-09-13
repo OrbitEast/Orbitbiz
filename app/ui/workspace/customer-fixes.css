@@ -1,0 +1,7 @@
+/* OrbitBiz — customer search control refinement. */
+.ob-search-field{display:flex;align-items:center;gap:10px;min-height:44px;max-width:620px;padding:0 14px;border:1.5px solid var(--ob-ink);border-radius:13px;background:#fff;box-shadow:2px 2px 0 var(--ob-blue)}
+.ob-search-field svg{width:17px!important;height:17px!important;min-width:17px!important;max-width:17px!important;min-height:17px!important;max-height:17px!important;display:block;flex:0 0 17px;stroke-width:1.9}
+.ob-search-field input{width:100%;min-width:0;height:40px;border:0!important;outline:0!important;background:transparent!important;box-shadow:none!important;padding:0!important;font-size:12px;color:var(--ob-ink)}
+.ob-search-field:focus-within{box-shadow:3px 3px 0 var(--ob-yellow)}
+.ob-page-tools{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:16px}
+@media(max-width:720px){.ob-page-tools{align-items:stretch;flex-direction:column}.ob-search-field{max-width:none}}
